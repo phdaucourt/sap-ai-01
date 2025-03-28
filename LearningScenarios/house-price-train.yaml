@@ -11,7 +11,7 @@ metadata:
     artifacts.ai.sap.com/housemodel.kind: "model" # Helps in suggesting the kind of artifact that can be generated.
   labels:
     scenarios.ai.sap.com/id: "learning-datalines"
-    ai.sap.com/version: "2.0"
+    ai.sap.com/version: "2.1"
 spec:
   imagePullSecrets:
     - name: credstutorialrepo # your docker registry secret
@@ -25,6 +25,9 @@ spec:
     - - name: mypredictor
         template: mycodeblock1
   - name: mycodeblock1
+    metadata:
+      labels:
+        ai.sap.com/resourcePlan: starter
     inputs:
       artifacts:  # placeholder for cloud storage attachements
         - name: housedataset # a name for the placeholder
